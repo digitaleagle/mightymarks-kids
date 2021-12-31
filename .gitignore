@@ -44,3 +44,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Added to keep sensitive info off of GitHub
+dev-scripts/secrets.sh
