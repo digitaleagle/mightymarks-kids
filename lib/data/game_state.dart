@@ -15,17 +15,28 @@ class GameState {
   }
   GameState._gameState();
 
+  // verse to be memorized
   Verse bibleVerse = Verse("Please select a Bible verse first!");
+  // list of verses available
   VerseList verses = VerseList();
 
+  // the words in the verse -- created by buildWords()
   List<Word> words = [];
+  // the words that have been answered so far
   List<Word> answers = [];
+  // the words in the word bank -- randomized by buildWords()
   List<Word> bank = [];
 
+  // message to tell the user about right or wrong answers
   String message = "";
+  // number of wrong guesses in a row
   int wrongGuesses = 0;
+  // number of wrong guesses to guess before showing the right answer
   static const maxWrongGuessCount = 5;
+  // marked true when all the answers are in
+  bool isVerseComplete = false;
 
+  // the widgets listening to game state changes
   List<Function> acceptedCallbacks = [];
 
   listen(Function callback) {
@@ -79,6 +90,7 @@ class GameState {
     answers = [];
     message = "";
     wrongGuesses = 0;
+    isVerseComplete = false;
   }
 
   bool checkWord(Word word) {
@@ -98,6 +110,9 @@ class GameState {
     currentWord.guessed = true;
     message = "Good job, '${currentWord.word}' is right!";
     wrongGuesses = 0;
+    if(answers.length == words.length) {
+      isVerseComplete = true;
+    }
     for(Function listener in acceptedCallbacks) {
       listener();
     }

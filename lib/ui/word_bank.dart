@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mighty_marks_kids/data/game_state.dart';
 
 class WordBank extends StatefulWidget {
@@ -48,7 +49,12 @@ class WordBankState extends State {
     return Container(
       padding: EdgeInsets.all(15),
       color: Colors.green,
-      child: Wrap(
+      child: state.isVerseComplete ?
+        SvgPicture.asset(
+            "images/star.svg",
+        )
+      :
+        Wrap(
         children: wordWidgets,
         spacing: 15,
         runSpacing: 15,
