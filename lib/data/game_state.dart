@@ -5,6 +5,10 @@ import 'package:mighty_marks_kids/data/verse_list.dart';
 import 'package:mighty_marks_kids/data/word.dart';
 
 class GameState {
+  /*
+     This code creates a "Singleton".  Whenever I create the GameState, I will
+     get the same instance.
+   */
   static final GameState _instance = GameState._gameState();
   factory GameState() {
     return _instance;

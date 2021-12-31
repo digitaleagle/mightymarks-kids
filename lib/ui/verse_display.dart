@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mighty_marks_kids/data/game_state.dart';
 import 'package:mighty_marks_kids/data/word.dart';
 
+import 'message_area.dart';
+
 class VerseDisplay extends StatefulWidget {
   GameState state;
 
@@ -39,7 +41,6 @@ class _VerseDisplayState extends State<VerseDisplay> {
         }
       },
       builder: (context, candidateData, rejectedData) {
-        print("building  candidate: $candidateData; reject: $rejectedData");
         String displayVerse = "";
         for(Word word in state.answers) {
           if(displayVerse.isNotEmpty) {
@@ -47,16 +48,24 @@ class _VerseDisplayState extends State<VerseDisplay> {
           }
           displayVerse += word.word;
         }
-        return Container(
-            padding: EdgeInsets.all(15),
-            color: Colors.blue,
-            child: Text(
-              state.answers.isEmpty ? "Drop Here" : displayVerse,
-              style: TextStyle(
-                  fontSize: 24,
-                color: Colors.white
-              ),
-            ));
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+                padding: EdgeInsets.all(15),
+                color: Colors.blue,
+                child: Text(
+                  state.answers.isEmpty ? "Drop Here" : displayVerse,
+                  style: TextStyle(
+                      fontSize: 24,
+                    color: Colors.white
+                  ),
+                )
+            ),
+            MessageArea(this.state),
+          ],
+        );
       },
     );
   }

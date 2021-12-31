@@ -54,6 +54,5 @@ class WordBankState extends State {
         runSpacing: 15,
       ),
     );
-    ;
   }
 }

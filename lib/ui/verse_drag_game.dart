@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mighty_marks_kids/data/game_state.dart';
 
-import 'VerseDisplay.dart';
-import 'WordBank.dart';
-import 'message_area.dart';
+import 'verse_display.dart';
+import 'word_bank.dart';
 
 class VerseDragGame extends StatefulWidget {
   @override
@@ -32,7 +31,6 @@ class _VerseDragGameState extends State<VerseDragGame> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             VerseDisplay(this.state),
-            MessageArea(this.state),
             Expanded(
               flex: 1,
               child: WordBank(this.state),
