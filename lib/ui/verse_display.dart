@@ -29,11 +29,13 @@ class _VerseDisplayState extends State<VerseDisplay> {
   Widget build(BuildContext context) {
     return DragTarget(
       onWillAccept: (Word? data) {
-        print("onWillAccept ... $data");
+        // There are no other things being dragged, so we are always going to
+        // return true.
         return true;
       },
       onAccept: (Word data) {
-        print("Accepted $data");
+        // The word was dropped.  Now, we need to see if it is the right word
+        // or not.
         if (this.state.checkWord(data)) {
           this.state.acceptNextWord();
         } else {
@@ -41,6 +43,7 @@ class _VerseDisplayState extends State<VerseDisplay> {
         }
       },
       builder: (context, candidateData, rejectedData) {
+        // This builder displays what goes into the drag target
         String displayVerse = "";
         for(Word word in state.answers) {
           if(displayVerse.isNotEmpty) {
@@ -54,7 +57,13 @@ class _VerseDisplayState extends State<VerseDisplay> {
           children: [
             Container(
                 padding: EdgeInsets.all(15),
-                color: Colors.blue,
+                decoration: BoxDecoration(
+                  border: candidateData.isNotEmpty ? Border.all(
+                    width: 5.0,
+                    color: Colors.red,
+                  ) : null,
+                  color: Colors.blue,
+                ),
                 child: Text(
                   state.answers.isEmpty ? "Drop Here" : displayVerse,
                   style: TextStyle(
