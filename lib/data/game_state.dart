@@ -31,6 +31,8 @@ class GameState {
   pickVerse(Verse newVerse) {
     bibleVerse = newVerse;
     buildWords();
+    // hack for now.  Probably should remove the listeners on dispose
+    acceptedCallbacks = [];
   }
 
   buildWords() {
@@ -69,6 +71,10 @@ class GameState {
       }
       bank.add(temp.removeAt(pickedIndex));
     }
+
+    answers = [];
+    message = "";
+    wrongGuesses = 0;
   }
 
   bool checkWord(Word word) {
