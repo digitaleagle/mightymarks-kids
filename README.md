@@ -1,16 +1,19 @@
-# mighty_marks_kids
+# MightyMarks Kids
 
-An app to engage our kids in MightyMarks at Landmark Baptist Church
+An app to engage our kids in MightyMarks at Landmark Baptist Church.
 
-## Getting Started
+Currently, the app allows you to select which verse you are trying to memorize.  To build the verse,
+you must drag the words in order to the verse area.
 
-This project is a starting point for a Flutter application.
+## Acessing the App
 
-A few resources to get you started if this is your first Flutter project:
+The web version is currently hosted on the DigitalEagle website.  You can access that here:
+[MightyMarks Kids Web](https://digitaleagle.net/mightymarks/)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+I am in the process of getting it published on Google Play.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Contributing
+
+I am using Android Studio and Flutter to build this app.  I will work on getting some instructions
+put together for building and changing it.
