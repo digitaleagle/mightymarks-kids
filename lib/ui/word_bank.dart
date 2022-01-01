@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mighty_marks_kids/data/game_state.dart';
 
@@ -10,18 +9,16 @@ class WordBank extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return WordBankState(this.state);
+    return WordBankState();
   }
 }
 
-class WordBankState extends State {
-  GameState state;
-
-  WordBankState(this.state);
+class WordBankState extends State<WordBank> {
 
   @override
   void initState() {
-    this.state.listen(() {
+    super.initState();
+    widget.state.listen(() {
       setState(() {});
     });
   }
@@ -29,7 +26,7 @@ class WordBankState extends State {
   @override
   Widget build(BuildContext context) {
     List<Widget> wordWidgets = [];
-    for (var word in this.state.bank) {
+    for (var word in widget.state.bank) {
       wordWidgets.add(Draggable(
           data: word,
           axis: Axis.vertical,
@@ -49,7 +46,7 @@ class WordBankState extends State {
     return Container(
       padding: EdgeInsets.all(15),
       color: Colors.green,
-      child: state.isVerseComplete ?
+      child: widget.state.isVerseComplete ?
         SvgPicture.asset(
             "images/star.svg",
         )

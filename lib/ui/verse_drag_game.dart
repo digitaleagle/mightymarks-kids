@@ -30,10 +30,10 @@ class _VerseDragGameState extends State<VerseDragGame> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            VerseDisplay(this.state),
+            VerseDisplay(state),
             Expanded(
               flex: 1,
-              child: WordBank(this.state),
+              child: WordBank(state),
             ),
           ],
         ),

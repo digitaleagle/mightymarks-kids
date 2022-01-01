@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mighty_marks_kids/data/game_state.dart';
 
 class MessageArea extends StatefulWidget {
-  GameState state;
+  final GameState state;
 
-  MessageArea(this.state);
+  const MessageArea(this.state);
 
   @override
   State<MessageArea> createState() => _MessageAreaState();
@@ -28,6 +28,7 @@ class _MessageAreaState extends State<MessageArea> {
 
   @override
   void initState() {
+    super.initState();
     widget.state.listen(() {
       setState(() {});
     });

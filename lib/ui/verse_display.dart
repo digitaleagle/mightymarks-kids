@@ -10,17 +10,16 @@ class VerseDisplay extends StatefulWidget {
   VerseDisplay(this.state);
 
   @override
-  State<VerseDisplay> createState() => _VerseDisplayState(state);
+  State<VerseDisplay> createState() => _VerseDisplayState();
 }
 
 class _VerseDisplayState extends State<VerseDisplay> {
-  GameState state;
-
-  _VerseDisplayState(this.state);
+  _VerseDisplayState();
 
   @override
   void initState() {
-    this.state.listen(() {
+    super.initState();
+    widget.state.listen(() {
       setState(() {});
     });
   }
@@ -36,16 +35,16 @@ class _VerseDisplayState extends State<VerseDisplay> {
       onAccept: (Word data) {
         // The word was dropped.  Now, we need to see if it is the right word
         // or not.
-        if (this.state.checkWord(data)) {
-          this.state.acceptNextWord();
+        if (widget.state.checkWord(data)) {
+          widget.state.acceptNextWord();
         } else {
-          this.state.wrongWord(data);
+          widget.state.wrongWord(data);
         }
       },
       builder: (context, candidateData, rejectedData) {
         // This builder displays what goes into the drag target
         String displayVerse = "";
-        for(Word word in state.answers) {
+        for(Word word in widget.state.answers) {
           if(displayVerse.isNotEmpty) {
             displayVerse += " ";
           }
@@ -65,14 +64,14 @@ class _VerseDisplayState extends State<VerseDisplay> {
                   color: Colors.blue,
                 ),
                 child: Text(
-                  state.answers.isEmpty ? "Drop Here" : displayVerse,
+                  widget.state.answers.isEmpty ? "Drop Here" : displayVerse,
                   style: TextStyle(
                       fontSize: 24,
                     color: Colors.white
                   ),
                 )
             ),
-            MessageArea(this.state),
+            MessageArea(widget.state),
           ],
         );
       },
