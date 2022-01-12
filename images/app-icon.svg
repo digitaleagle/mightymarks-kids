@@ -7,7 +7,7 @@
    id="svg7768"
    inkscape:version="1.1.1 (eb90963e84, 2021-10-02)"
    sodipodi:docname="app-icon.svg"
-   inkscape:export-filename="/home/skp/Documents/MightyMarks/Graphics/Logo/for tshirt.png"
+   inkscape:export-filename="/home/skp/Documents/MightyMarks/Graphics/Game/app-icon.png"
    inkscape:export-xdpi="217.172"
    inkscape:export-ydpi="217.172"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,9 +26,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.1182732"
-     inkscape:cx="84.696534"
-     inkscape:cy="53.631369"
+     inkscape:zoom="4.3238049"
+     inkscape:cx="124.31181"
+     inkscape:cy="64.179585"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -61,33 +61,27 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-26.83074,-64.11696)">
-    <path
-       d="m 47.163018,67.551215 -0.916177,18.028874 -4.541054,0.245624 0.03984,-9.505686 -2.05144,7.663499 h -1.752687 l -1.573435,-6.852936 -0.01992,7.958248 -4.600804,0.171938 0.199168,-16.972686 5.118644,-0.245624 2.031524,8.130186 2.708699,-8.621437 z"
-       id="path53570"
-       style="font-size:22.6489px;line-height:1.25;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy, Normal';letter-spacing:0px;word-spacing:0px;fill:#67ce37;stroke-width:0.566222" />
     <g
-       id="g31186"
-       transform="matrix(0.75773909,0.14515934,-0.14515934,0.75773909,37.716974,3.6253057)">
+       id="g921"
+       transform="matrix(0.71906751,0,0,0.71906751,19.903085,32.087881)">
+      <rect
+         style="fill:#1b6dc0;stroke-width:0.367881;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1"
+         id="rect854"
+         width="30.048117"
+         height="30.052891"
+         x="12.271926"
+         y="47.177837"
+         ry="6.4527345"
+         inkscape:export-filename="/home/skp/Documents/MightyMarks/Graphics/Game/app-icon.png"
+         inkscape:export-xdpi="51.32"
+         inkscape:export-ydpi="51.32" />
       <path
-         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 35.034149,103.57325 c -10.933421,-0.59074 -9.759897,-13.26869 -2.257445,-15.10754 0.828864,5.206998 1.507928,9.727074 2.257445,15.10754 z"
-         id="path31287"
-         sodipodi:nodetypes="ccc" />
-      <path
-         style="fill:#1b6dc0;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="M 35.034149,103.57325 C 24.100728,102.98251 25.274252,90.30456 32.776704,88.46571 l 0.675812,4.577517 -4.431027,1.307539 -0.137162,2.123648 5.036867,-0.8906 z"
-         id="path994"
-         sodipodi:nodetypes="ccccccc" />
-      <path
-         id="path2844"
-         style="fill:#67ce37;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 31.388474,96.052242 -2.504147,0.422172 0.137162,-2.123649 4.431027,-1.307538 c -0.09602,-0.633519 -0.09635,-1.191997 -0.316072,-1.501598 -4.421748,2.025868 -0.323443,-1.057843 -0.35974,-3.075919 -7.465378,4.473234 -5.705482,9.718124 -1.120856,11.6216 1.483278,0.51869 -0.391615,1.08863 3.378298,3.48594 l -0.512845,-3.73639 c -2.634732,-0.414829 -4.169946,-1.415008 -3.132827,-3.784618 z"
-         sodipodi:nodetypes="cccccccccc" />
+         d="m 35.958256,51.838367 -1.062893,20.672896 -5.268256,0.281641 0.04622,-10.899743 -2.379958,8.787387 h -2.033361 l -1.825405,-7.857941 -0.02311,9.125366 -5.337575,0.197141 0.231063,-19.461801 5.938342,-0.281653 2.356849,9.32252 3.14247,-9.885813 z"
+         id="path856"
+         style="font-size:22.6489px;line-height:1.25;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy, Normal';letter-spacing:0px;word-spacing:0px;fill:#67ce37;stroke-width:0.653068"
+         inkscape:export-filename="/home/skp/Documents/MightyMarks/Graphics/Game/app-icon.png"
+         inkscape:export-xdpi="51.32"
+         inkscape:export-ydpi="51.32" />
     </g>
-    <path
-       style="fill:#1b6dc0;fill-opacity:1;stroke:none;stroke-width:0.160845px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 31.139955,65.779654 1.898674,3.277742 -2.715563,1.806807 0.571553,1.661407 2.952611,-1.904622 3.064203,5.715901 1.48679,-1.060692 -3.077625,-5.366926 2.872419,-1.933572 -1.1044,-1.155457 -2.729999,1.552733 -2.011937,-3.264833 z"
-       id="path32276"
-       sodipodi:nodetypes="ccccccccccccc" />
   </g>
 </svg>
