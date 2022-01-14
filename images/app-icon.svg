@@ -26,9 +26,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4.3238049"
-     inkscape:cx="124.31181"
-     inkscape:cy="64.179585"
+     inkscape:zoom="7.0360547"
+     inkscape:cx="31.19646"
+     inkscape:cy="72.69699"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -61,27 +61,30 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-26.83074,-64.11696)">
-    <g
-       id="g921"
-       transform="matrix(0.71906751,0,0,0.71906751,19.903085,32.087881)">
-      <rect
-         style="fill:#1b6dc0;stroke-width:0.367881;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1"
-         id="rect854"
-         width="30.048117"
-         height="30.052891"
-         x="12.271926"
-         y="47.177837"
-         ry="6.4527345"
-         inkscape:export-filename="/home/skp/Documents/MightyMarks/Graphics/Game/app-icon.png"
-         inkscape:export-xdpi="51.32"
-         inkscape:export-ydpi="51.32" />
-      <path
-         d="m 35.958256,51.838367 -1.062893,20.672896 -5.268256,0.281641 0.04622,-10.899743 -2.379958,8.787387 h -2.033361 l -1.825405,-7.857941 -0.02311,9.125366 -5.337575,0.197141 0.231063,-19.461801 5.938342,-0.281653 2.356849,9.32252 3.14247,-9.885813 z"
-         id="path856"
-         style="font-size:22.6489px;line-height:1.25;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy, Normal';letter-spacing:0px;word-spacing:0px;fill:#67ce37;stroke-width:0.653068"
-         inkscape:export-filename="/home/skp/Documents/MightyMarks/Graphics/Game/app-icon.png"
-         inkscape:export-xdpi="51.32"
-         inkscape:export-ydpi="51.32" />
-    </g>
+    <rect
+       style="fill:#1b6dc0;stroke-width:0.264615;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1"
+       id="rect856"
+       width="21.613441"
+       height="21.616877"
+       x="28.727428"
+       y="66.011932"
+       ry="4.6414161"
+       inkscape:export-filename="/home/skp/Documents/MightyMarks/Graphics/Game/app-icon.png"
+       inkscape:export-xdpi="217.172"
+       inkscape:export-ydpi="217.172" />
+    <path
+       d="m 45.764872,69.36422 -0.764532,14.869898 -3.789429,0.202584 0.03324,-7.840124 -1.71189,6.320718 H 38.06968 l -1.313003,-5.652174 -0.01662,6.563825 -3.839287,0.141802 0.166202,-13.998763 4.271416,-0.202592 1.69527,6.705636 2.260361,-7.11081 z"
+       id="path860"
+       style="font-size:22.6489px;line-height:1.25;font-family:'Luckiest Guy';-inkscape-font-specification:'Luckiest Guy, Normal';letter-spacing:0px;word-spacing:0px;fill:#67ce37;stroke-width:0.469749"
+       inkscape:export-filename="/home/skp/Documents/MightyMarks/Graphics/Game/app-icon.png"
+       inkscape:export-xdpi="217.172"
+       inkscape:export-ydpi="217.172" />
+    <path
+       id="path858"
+       style="fill:#ffff00;stroke-width:0.264615;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1"
+       d="m 33.042084,72.069684 -0.108776,9.156314 3.814958,-0.62177 0.0084,-3.339089 0.74708,3.215859 2.812472,-0.458399 0.927923,-3.426026 -0.01395,3.277005 4.028143,-0.656503 0.250725,-4.877032 -5.479563,-0.997909 -0.995829,3.132872 -0.878319,-3.474175 z"
+       inkscape:export-filename="/home/skp/Documents/MightyMarks/Graphics/Game/app-icon.png"
+       inkscape:export-xdpi="217.172"
+       inkscape:export-ydpi="217.172" />
   </g>
 </svg>
