@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mighty_marks_kids/data/game_state.dart';
 import 'package:mighty_marks_kids/data/word.dart';
+import 'package:mighty_marks_kids/data/globals.dart' as globals;
 
 import 'message_area.dart';
 
@@ -66,7 +67,7 @@ class _VerseDisplayState extends State<VerseDisplay> {
                 child: Text(
                   widget.state.answers.isEmpty ? "Drop Here" : displayVerse,
                   style: TextStyle(
-                      fontSize: 24,
+                      fontSize: globals.settings.FontSize,
                     color: Colors.white
                   ),
                 )

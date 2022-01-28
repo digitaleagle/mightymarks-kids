@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mighty_marks_kids/ui/home_page.dart';
+import 'package:mighty_marks_kids/ui/settings_page.dart';
 import 'package:mighty_marks_kids/ui/verse_drag_game.dart';
+import 'package:mighty_marks_kids/data/globals.dart' as globals;
 
 void main() {
+  globals.settings.load();
   runApp(const MyApp());
 }
 
@@ -21,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomePage(),
         '/verse': (context) => VerseDragGame(),
+        '/settings': (context) => SettingsPage(),
       },
     );
   }

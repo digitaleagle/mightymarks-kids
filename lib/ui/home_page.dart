@@ -9,6 +9,13 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("MightyMarks"),
+        actions: <Widget>[
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/settings");
+              },
+              icon: const Icon(Icons.settings))
+        ],
       ),
       body: ListView.builder(
         itemCount: state.verses.list.length,
