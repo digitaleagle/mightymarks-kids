@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mighty_marks_kids/data/game_state.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     GameState state = GameState();
@@ -12,7 +17,11 @@ class HomePage extends StatelessWidget {
         actions: <Widget>[
           IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, "/settings");
+                Navigator.pushNamed(context, "/settings").then((value) {
+                  setState(() {
+                    print("refreshing");
+                  });
+                });
               },
               icon: const Icon(Icons.settings))
         ],

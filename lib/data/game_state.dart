@@ -131,4 +131,8 @@ class GameState {
       listener();
     }
   }
+
+  refreshVerseList() {
+    verses = VerseList();
+  }
 }

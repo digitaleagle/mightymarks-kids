@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mighty_marks_kids/data/game_state.dart';
 import 'package:mighty_marks_kids/data/globals.dart' as globals;
 
 class SettingsPage extends StatefulWidget {
@@ -9,6 +10,7 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   final _formKey = GlobalKey<FormState>();
   double _fontSize = globals.settings.FontSize;
+  String _verseList = globals.settings.VerseList;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,12 @@ class _SettingsPageState extends State<SettingsPage> {
                 items: <String>['MightyMarks TechTitans Verses','Glimmers Verses','Demo Verses'].map((String value) {
                   return DropdownMenuItem<String>(value: value, child: Text(value));
                 }).toList(),
-                onChanged: (_){},
+                onChanged: (newValue){
+                  if(newValue != null) {
+                    _verseList = newValue;
+                  }
+                },
+              value: _verseList,
             ),
             Slider(
                 value: _fontSize,
@@ -47,6 +54,10 @@ class _SettingsPageState extends State<SettingsPage> {
                   const SnackBar(content: Text("Saving..."))
                 );
                 globals.settings.FontSize = _fontSize;
+                if(globals.settings.VerseList != _verseList) {
+                  globals.settings.VerseList = _verseList;
+                  GameState().refreshVerseList();
+                }
                 globals.settings.save();
                 Navigator.pop(context);
               }
