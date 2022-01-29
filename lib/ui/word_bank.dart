@@ -35,28 +35,22 @@ class WordBankState extends State<WordBank> {
             child: Chip(label: Text(word.word)),
           ),
           child: Chip(
-              label: Text(
-                  word.word,
-                style: TextStyle(fontSize: globals.settings.FontSize),
-              ),
+            label: Text(
+              word.word,
+              style: TextStyle(fontSize: globals.settings.FontSize),
+            ),
             labelPadding: EdgeInsets.all(10),
-          )
-      ));
+          )));
     }
 
     return Container(
       padding: EdgeInsets.all(15),
       color: Colors.green,
-      child: widget.state.isVerseComplete ?
-        SvgPicture.asset(
-            "images/star.svg",
-        )
-      :
-        Wrap(
-        children: wordWidgets,
-        spacing: 15,
-        runSpacing: 15,
-      ),
+      child: Wrap(
+              children: wordWidgets,
+              spacing: 15,
+              runSpacing: 15,
+            ),
     );
   }
 }
