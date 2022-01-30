@@ -36,6 +36,10 @@ class GameState {
   // marked true when all the answers are in
   bool isVerseComplete = false;
 
+  // for 3-star tracking
+  int totalWrongGuesses = 0;
+  int totalHelps = 0;
+
   // the widgets listening to game state changes
   List<Function> acceptedCallbacks = [];
 
@@ -91,6 +95,8 @@ class GameState {
     message = "";
     wrongGuesses = 0;
     isVerseComplete = false;
+    totalWrongGuesses = 0;
+    totalHelps = 0;
   }
 
   bool checkWord(Word word) {
@@ -122,8 +128,10 @@ class GameState {
     Word currentWord = words[answers.length];
 
     wrongGuesses++;
+    totalWrongGuesses++;
     if(wrongGuesses >= maxWrongGuessCount) {
       message = "No, not '${attemptedWord.word}', next is '${currentWord.word}'";
+      totalHelps++;
     } else {
       message = "No, '${attemptedWord.word}' is not next";
     }
@@ -135,4 +143,19 @@ class GameState {
   refreshVerseList() {
     verses = VerseList();
   }
+
+  int get stars {
+    if(isVerseComplete) {
+      if(totalWrongGuesses == 0) {
+        return 3;
+      } else {
+        if(totalHelps == 0) {
+          return 2;
+        }
+      }
+      return 1;
+    }
+    return 0;
+  }
+
 }
