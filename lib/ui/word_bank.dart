@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mighty_marks_kids/data/game_state.dart';
 import 'package:mighty_marks_kids/data/globals.dart' as globals;
 
 class WordBank extends StatefulWidget {
-  GameState state;
+  final GameState state;
 
-  WordBank(this.state);
+  const WordBank(this.state, {Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -37,14 +36,14 @@ class WordBankState extends State<WordBank> {
           child: Chip(
             label: Text(
               word.word,
-              style: TextStyle(fontSize: globals.settings.FontSize),
+              style: TextStyle(fontSize: globals.settings.fontSize),
             ),
-            labelPadding: EdgeInsets.all(10),
+            labelPadding: const EdgeInsets.all(10),
           )));
     }
 
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       color: Colors.green,
       child: Wrap(
               children: wordWidgets,

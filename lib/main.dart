@@ -18,13 +18,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MightyMarks',
       theme: ThemeData(
-        primarySwatch: createMaterialColor(Color.fromRGBO(104, 142, 176, 1)),
+        primarySwatch: createMaterialColor(const Color.fromRGBO(104, 142, 176, 1)),
         fontFamily: 'Luckiest Guy'
       ),
       routes: {
-        '/': (context) => HomePage(),
-        '/verse': (context) => VerseDragGame(),
-        '/settings': (context) => SettingsPage(),
+        '/': (context) => const HomePage(),
+        '/verse': (context) => const VerseDragGame(),
+        '/settings': (context) => const SettingsPage(),
       },
     );
   }
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
     for (int i = 1; i < 10; i++) {
       strengths.add(0.1 * i);
     }
-    strengths.forEach((strength) {
+    for (var strength in strengths) {
       final double ds = 0.5 - strength;
       swatch[(strength * 1000).round()] = Color.fromRGBO(
         r + ((ds < 0 ? r : (255 - r)) * ds).round(),
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         b + ((ds < 0 ? b : (255 - b)) * ds).round(),
         1,
       );
-    });
+    }
     return MaterialColor(color.value, swatch);
   }
 }

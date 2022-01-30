@@ -4,6 +4,8 @@ import 'package:mighty_marks_kids/data/game_state.dart';
 import 'package:mighty_marks_kids/data/globals.dart' as globals;
 
 class StarAward extends StatefulWidget {
+  const StarAward({Key? key}) : super(key: key);
+
   @override
   State<StarAward> createState() => _StarAwardState();
 }
@@ -56,7 +58,9 @@ class _StarAwardState extends State<StarAward>
             .forward()
             .orCancel;
       }
-    } on TickerCanceled {}
+    } on TickerCanceled {
+      return;
+    }
   }
 
   @override
@@ -94,7 +98,7 @@ class _StarAwardState extends State<StarAward>
             fit: StackFit.expand,
             children: [
               RotationTransition(
-                turns: _currentStar == 1 ? Tween(begin: 0.0, end: 1.0).animate(controller) : AlwaysStoppedAnimation(0),
+                turns: _currentStar == 1 ? Tween(begin: 0.0, end: 1.0).animate(controller) : const AlwaysStoppedAnimation(0),
                 child: FractionallySizedBox(
                   //heightFactor: animation.value,
                   widthFactor: _star1Size,
@@ -107,7 +111,7 @@ class _StarAwardState extends State<StarAward>
                   child: Text(
                 "Verse\nComplete",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: globals.settings.FontSize, color: Colors.white),
+                style: TextStyle(fontSize: globals.settings.fontSize, color: Colors.white),
               )),
             ],
           ),
@@ -118,7 +122,7 @@ class _StarAwardState extends State<StarAward>
             fit: StackFit.expand,
             children: [
               RotationTransition(
-                turns: _currentStar == 3 ? Tween(begin: 0.0, end: 1.0).animate(controller) : AlwaysStoppedAnimation(0),
+                turns: _currentStar == 3 ? Tween(begin: 0.0, end: 1.0).animate(controller) : const AlwaysStoppedAnimation(0),
                 child: FractionallySizedBox(
                   //heightFactor: animation.value,
                   widthFactor: _star3Size,
@@ -131,7 +135,7 @@ class _StarAwardState extends State<StarAward>
                   child: Text(
                     mistakesText,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: globals.settings.FontSize, color: Colors.white),
+                    style: TextStyle(fontSize: globals.settings.fontSize, color: Colors.white),
                   )),
             ],
           ),
@@ -142,7 +146,7 @@ class _StarAwardState extends State<StarAward>
             fit: StackFit.expand,
             children: [
               RotationTransition(
-                turns: _currentStar == 2 ? Tween(begin: 0.0, end: 1.0).animate(controller) : AlwaysStoppedAnimation(0),
+                turns: _currentStar == 2 ? Tween(begin: 0.0, end: 1.0).animate(controller) : const AlwaysStoppedAnimation(0),
                 child: FractionallySizedBox(
                   //heightFactor: animation.value,
                   widthFactor: _star2Size,
@@ -155,7 +159,7 @@ class _StarAwardState extends State<StarAward>
                   child: Text(
                     helpsText,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: globals.settings.FontSize, color: Colors.white),
+                    style: TextStyle(fontSize: globals.settings.fontSize, color: Colors.white),
                   )),
             ],
           ),

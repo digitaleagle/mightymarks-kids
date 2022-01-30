@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mighty_marks_kids/data/game_state.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -18,9 +20,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, "/settings").then((value) {
-                  setState(() {
-                    print("refreshing");
-                  });
+                  setState(() {});
                 });
               },
               icon: const Icon(Icons.settings))

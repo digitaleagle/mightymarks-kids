@@ -5,7 +5,7 @@ class VerseList {
   List<Verse> list = [];
 
   VerseList() {
-    switch (globals.settings.VerseList) {
+    switch (globals.settings.verseList) {
       case 'Glimmers Verses':
         list.add(Verse(
             "The light of the body is the eye: (Luke 11:34a)"));

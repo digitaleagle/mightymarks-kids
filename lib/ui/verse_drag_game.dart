@@ -6,6 +6,8 @@ import 'verse_display.dart';
 import 'word_bank.dart';
 
 class VerseDragGame extends StatefulWidget {
+  const VerseDragGame({Key? key}) : super(key: key);
+
   @override
   State<VerseDragGame> createState() => _VerseDragGameState();
 }
@@ -38,7 +40,7 @@ class _VerseDragGameState extends State<VerseDragGame> {
           },
           tooltip: "Back to Home",
         ),
-        title: Text("Build a Verse"),
+        title: const Text("Build a Verse"),
       ),
       body: Stack(
         fit: StackFit.expand,
@@ -56,7 +58,7 @@ class _VerseDragGameState extends State<VerseDragGame> {
               ],
             ),
           ),
-          _isComplete ? StarAward() : Container(),
+          _isComplete ? const StarAward() : Container(),
         ],
       ),
     );

@@ -3,20 +3,22 @@ import 'package:mighty_marks_kids/data/game_state.dart';
 import 'package:mighty_marks_kids/data/globals.dart' as globals;
 
 class SettingsPage extends StatefulWidget {
+  const SettingsPage({Key? key}) : super(key: key);
+
   @override
   State<SettingsPage> createState() => _SettingsPageState();
 }
 
 class _SettingsPageState extends State<SettingsPage> {
   final _formKey = GlobalKey<FormState>();
-  double _fontSize = globals.settings.FontSize;
-  String _verseList = globals.settings.VerseList;
+  double _fontSize = globals.settings.fontSize;
+  String _verseList = globals.settings.verseList;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("MightyMarks Settings"),
+        title: const Text("MightyMarks Settings"),
       ),
       body: Form(
         key: _formKey,
@@ -53,9 +55,9 @@ class _SettingsPageState extends State<SettingsPage> {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text("Saving..."))
                 );
-                globals.settings.FontSize = _fontSize;
-                if(globals.settings.VerseList != _verseList) {
-                  globals.settings.VerseList = _verseList;
+                globals.settings.fontSize = _fontSize;
+                if(globals.settings.verseList != _verseList) {
+                  globals.settings.verseList = _verseList;
                   GameState().refreshVerseList();
                 }
                 globals.settings.save();

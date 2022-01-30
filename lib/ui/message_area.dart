@@ -4,7 +4,7 @@ import 'package:mighty_marks_kids/data/game_state.dart';
 class MessageArea extends StatefulWidget {
   final GameState state;
 
-  const MessageArea(this.state);
+  const MessageArea({Key? key, required this.state}) : super(key : key);
 
   @override
   State<MessageArea> createState() => _MessageAreaState();
@@ -15,12 +15,12 @@ class _MessageAreaState extends State<MessageArea> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       child: Align(
         alignment: Alignment.center,
         child: Text(
           widget.state.message,
-          style: TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 20),
         ),
       )
     );

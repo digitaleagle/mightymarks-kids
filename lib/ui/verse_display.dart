@@ -6,9 +6,9 @@ import 'package:mighty_marks_kids/data/globals.dart' as globals;
 import 'message_area.dart';
 
 class VerseDisplay extends StatefulWidget {
-  GameState state;
+  final GameState state;
 
-  VerseDisplay(this.state);
+  const VerseDisplay(this.state, {Key? key}) : super(key: key);
 
   @override
   State<VerseDisplay> createState() => _VerseDisplayState();
@@ -56,7 +56,7 @@ class _VerseDisplayState extends State<VerseDisplay> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-                padding: EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   border: candidateData.isNotEmpty ? Border.all(
                     width: 5.0,
@@ -67,12 +67,12 @@ class _VerseDisplayState extends State<VerseDisplay> {
                 child: Text(
                   widget.state.answers.isEmpty ? "Drop Here" : displayVerse,
                   style: TextStyle(
-                      fontSize: globals.settings.FontSize,
+                      fontSize: globals.settings.fontSize,
                     color: Colors.white
                   ),
                 )
             ),
-            MessageArea(widget.state),
+            MessageArea(state: widget.state),
           ],
         );
       },
