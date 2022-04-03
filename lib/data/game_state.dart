@@ -27,6 +27,8 @@ class GameState {
   // the words in the word bank -- randomized by buildWords()
   List<Word> bank = [];
 
+  GameType gameType = GameType.test;
+
   // message to tell the user about right or wrong answers
   String message = "";
   // number of wrong guesses in a row
@@ -39,6 +41,7 @@ class GameState {
   // for 3-star tracking
   int totalWrongGuesses = 0;
   int totalHelps = 0;
+
 
   // the widgets listening to game state changes
   List<Function> acceptedCallbacks = [];
@@ -54,7 +57,28 @@ class GameState {
     acceptedCallbacks = [];
   }
 
-  buildWords() {
+  pickGame(GameType gameType) {
+    this.gameType = gameType;
+    switch(gameType) {
+      case GameType.quickLearn:
+        buildWords(randomize: false);
+        break;
+      case GameType.guided:
+        buildWords();
+        message = "First word: ${words[0].word}";
+        break;
+      case GameType.test:
+        buildWords();
+        break;
+      default:
+        buildWords();
+        break;
+    }
+    // hack for now.  Probably should remove the listeners on dispose
+    acceptedCallbacks = [];
+  }
+
+  buildWords({bool randomize = true}) {
     List<String> simpleWords = bibleVerse.text.split(" ");
     words = [];
 
@@ -86,7 +110,11 @@ class GameState {
         }
       }
       if(pickedIndex < 0) {
-        pickedIndex = Random().nextInt(temp.length);
+        if(randomize) {
+          pickedIndex = Random().nextInt(temp.length);
+        } else {
+          pickedIndex = 0;
+        }
       }
       bank.add(temp.removeAt(pickedIndex));
     }
@@ -119,6 +147,9 @@ class GameState {
     if(answers.length == words.length) {
       isVerseComplete = true;
     }
+    if(gameType == GameType.guided) {
+      message = "Next word: ${words[answers.length].word}";
+    }
     for(Function listener in acceptedCallbacks) {
       listener();
     }
@@ -129,7 +160,7 @@ class GameState {
 
     wrongGuesses++;
     totalWrongGuesses++;
-    if(wrongGuesses >= maxWrongGuessCount) {
+    if(wrongGuesses >= maxWrongGuessCount || gameType == GameType.guided) {
       message = "No, not '${attemptedWord.word}', next is '${currentWord.word}'";
       totalHelps++;
     } else {
@@ -158,4 +189,11 @@ class GameState {
     return 0;
   }
 
+}
+
+enum GameType {
+  quickLearn,
+  guided,
+  timeOutGuided,
+  test,
 }

@@ -33,7 +33,8 @@ class _HomePageState extends State<HomePage> {
             title: Text(state.verses.list[index].reference),
             onTap: () {
               state.pickVerse(state.verses.list[index]);
-              Navigator.pushNamed(context, "/verse");
+              //Navigator.pushNamed(context, "/verse");
+              Navigator.pushNamed(context, "/gameSelect");
             },
           );
         },
