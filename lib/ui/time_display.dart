@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:mighty_marks_kids/data/game_state.dart';
 
 class TimeDisplay extends StatefulWidget {
+  const TimeDisplay({Key? key}) : super(key: key);
+
   @override
   State<TimeDisplay> createState() => _TimeDisplayState();
 }
@@ -39,8 +41,18 @@ class _TimeDisplayState extends State<TimeDisplay> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(10, 0, 5, 0),
-        child: Text(_seconds.toString(),
-          style: const TextStyle(fontSize: 25),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Icon(Icons.timer_outlined),
+            Container(
+              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+              child: Text(_seconds.toString(),
+                style: const TextStyle(fontSize: 25),
+              ),
+            ),
+          ],
         )
     );
   }
