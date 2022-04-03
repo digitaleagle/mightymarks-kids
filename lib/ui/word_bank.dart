@@ -29,16 +29,27 @@ class WordBankState extends State<WordBank> {
     for (var word in widget.state.bank) {
       wordWidgets.add(Draggable(
           data: word,
-          axis: Axis.vertical,
+          //axis: Axis.vertical,
           feedback: Material(
             child: Chip(label: Text(word.word)),
           ),
-          child: Chip(
-            label: Text(
-              word.word,
-              style: TextStyle(fontSize: globals.settings.fontSize),
+          child: InkWell(
+            onDoubleTap: () {
+              // The word was dropped.  Now, we need to see if it is the right word
+              // or not.
+              if (widget.state.checkWord(word)) {
+                widget.state.acceptNextWord();
+              } else {
+                widget.state.wrongWord(word);
+              }
+            },
+            child: Chip(
+              label: Text(
+                word.word,
+                style: TextStyle(fontSize: globals.settings.fontSize),
+              ),
+              labelPadding: const EdgeInsets.all(10),
             ),
-            labelPadding: const EdgeInsets.all(10),
           )));
     }
 
