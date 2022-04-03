@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mighty_marks_kids/data/game_state.dart';
+import 'package:mighty_marks_kids/ui/basic_award.dart';
 import 'package:mighty_marks_kids/ui/star_award.dart';
 
 import 'verse_display.dart';
@@ -31,6 +32,10 @@ class _VerseDragGameState extends State<VerseDragGame> {
 
   @override
   Widget build(BuildContext context) {
+    var showStarAward = false;
+    if(state.gameType == GameType.test || state.gameType == GameType.timeOutGuided) {
+      showStarAward = true;
+    }
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -58,7 +63,7 @@ class _VerseDragGameState extends State<VerseDragGame> {
               ],
             ),
           ),
-          _isComplete ? const StarAward() : Container(),
+          _isComplete ? showStarAward ? const StarAward() : BasicAward() : Container(),
         ],
       ),
     );

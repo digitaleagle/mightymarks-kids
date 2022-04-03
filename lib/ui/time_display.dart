@@ -11,7 +11,7 @@ class TimeDisplay extends StatefulWidget {
 class _TimeDisplayState extends State<TimeDisplay> {
   late Timer _timer;
   var _seconds = 0;
-  GameState _state = GameState();
+  final GameState _state = GameState();
   
   @override
   void initState() {
@@ -19,7 +19,6 @@ class _TimeDisplayState extends State<TimeDisplay> {
     const oneSecond = Duration(seconds: 1);
     _timer = Timer.periodic(oneSecond, (timer) {
       setState(() {
-        print("Hello!");
         if(_state.isVerseComplete) {
           timer.cancel();
         } else {

@@ -137,6 +137,30 @@ class _StarAwardState extends State<StarAward>
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: globals.settings.fontSize, color: Colors.white),
                   )),
+              Visibility(
+                visible: state.gameType == GameType.timeOutGuided,
+                child: Column(
+                  children: [
+                    const Spacer(),
+                    Container(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                      child: ElevatedButton(
+                          onPressed: () {
+                            state.pickGame(GameType.test);
+                            Navigator.pushReplacementNamed(context, "/verse");
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.blue,
+                            textStyle:TextStyle(
+                              fontSize: globals.settings.fontSize,
+                            ),
+                          ),
+                          child: const Text("Take the Test")
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),

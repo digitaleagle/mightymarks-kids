@@ -156,7 +156,7 @@ class GameState {
     if(answers.length == words.length) {
       isVerseComplete = true;
     }
-    if(gameType == GameType.guided) {
+    if(gameType == GameType.guided && words.length > answers.length) {
       message = "Next word: ${words[answers.length].word}";
     }
     if(gameType == GameType.timeOutGuided) {
@@ -189,10 +189,10 @@ class GameState {
 
   int get stars {
     if(isVerseComplete) {
-      if(totalWrongGuesses == 0) {
+      if(totalWrongGuesses == 0 && totalHelps == 0) {
         return 3;
       } else {
-        if(totalHelps == 0) {
+        if(totalHelps == 0 || totalWrongGuesses == 0) {
           return 2;
         }
       }
@@ -209,6 +209,7 @@ class GameState {
       }
       Word currentWord = words[answers.length];
       message = "Next is '${currentWord.word}'";
+      totalHelps++;
       nextWordTime = _gameTime + guideTime;
       for(Function listener in acceptedCallbacks) {
         listener();
