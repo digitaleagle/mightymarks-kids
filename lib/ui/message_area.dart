@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mighty_marks_kids/data/game_state.dart';
+import 'package:mighty_marks_kids/ui/time_display.dart';
 
 class MessageArea extends StatefulWidget {
   final GameState state;
@@ -14,15 +15,22 @@ class _MessageAreaState extends State<MessageArea> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(15),
-      child: Align(
-        alignment: Alignment.center,
-        child: Text(
-          widget.state.message,
-          style: const TextStyle(fontSize: 20),
+    return Row(
+      children: [
+        TimeDisplay(),
+        Expanded(
+          child: Container(
+            padding: const EdgeInsets.all(15),
+            child: Align(
+              alignment: Alignment.center,
+              child: Text(
+                widget.state.message,
+                style: const TextStyle(fontSize: 20),
+              ),
+            )
+          ),
         ),
-      )
+      ],
     );
   }
 

@@ -28,6 +28,10 @@ class GameState {
   List<Word> bank = [];
 
   GameType gameType = GameType.test;
+  var _gameTime = 0;
+  var nextWordTime = 0;
+  static const guideTime = 5;
+
 
   // message to tell the user about right or wrong answers
   String message = "";
@@ -66,6 +70,11 @@ class GameState {
       case GameType.guided:
         buildWords();
         message = "First word: ${words[0].word}";
+        break;
+      case GameType.timeOutGuided:
+        buildWords();
+        message = "You have $guideTime seconds";
+        nextWordTime = guideTime;
         break;
       case GameType.test:
         buildWords();
@@ -150,6 +159,9 @@ class GameState {
     if(gameType == GameType.guided) {
       message = "Next word: ${words[answers.length].word}";
     }
+    if(gameType == GameType.timeOutGuided) {
+      nextWordTime = gameTime + guideTime;
+    }
     for(Function listener in acceptedCallbacks) {
       listener();
     }
@@ -160,7 +172,7 @@ class GameState {
 
     wrongGuesses++;
     totalWrongGuesses++;
-    if(wrongGuesses >= maxWrongGuessCount || gameType == GameType.guided) {
+    if(wrongGuesses >= maxWrongGuessCount || gameType == GameType.guided || gameType == GameType.timeOutGuided) {
       message = "No, not '${attemptedWord.word}', next is '${currentWord.word}'";
       totalHelps++;
     } else {
@@ -187,6 +199,24 @@ class GameState {
       return 1;
     }
     return 0;
+  }
+
+  set gameTime(int newTime) {
+    _gameTime = newTime;
+    if(gameType == GameType.timeOutGuided && _gameTime > nextWordTime) {
+      if(answers.length >= words.length) {
+        return;
+      }
+      Word currentWord = words[answers.length];
+      message = "Next is '${currentWord.word}'";
+      nextWordTime = _gameTime + guideTime;
+      for(Function listener in acceptedCallbacks) {
+        listener();
+      }
+    }
+  }
+  int get gameTime {
+    return _gameTime;
   }
 
 }
